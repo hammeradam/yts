@@ -1,36 +1,36 @@
 document.getElementById('search').addEventListener('keyup', async function() {
     window.page = 1;
-    const data = await getMoovieData(this.value, 8, 1);
+    const data = await getMovieData(this.value, 8, 1);
 
-    appenMoovieCards(data, document.querySelector('.result-wrapper'), true);
+    appendMovieCards(data, document.querySelector('.result-wrapper'), true);
     
 });
 
 document.addEventListener('scroll', async function() {
     // scrolled to bottom
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        const data = await getMoovieData(document.getElementById('search').value, 8, ++window.page);
+        const data = await getMovieData(document.getElementById('search').value, 8, ++window.page);
 
-        appenMoovieCards(data, document.querySelector('.result-wrapper'));
+        appendMovieCards(data, document.querySelector('.result-wrapper'));
     }
 });
 
-async function getMoovieData(searchTerm = '',limit = 8, page = 1) {
-    const response = await fetch(`https://yts.mx/api/v2/list_movies.json?limit=${limit}&page=${page}&query_term=${encodeURI(searchTerm)}`);
+async function getMovieData(searchTerm = '', limit = 8, page = 1, order = 'download_count') {
+    const response = await fetch(`https://yts.mx/api/v2/list_movies.json?limit=${limit}&page=${page}&query_term=${encodeURI(searchTerm)}&sort_by=${order}`);
     return response.json();
 }
 
-function appenMoovieCards(data, conatiner, clearContainer = false) {
+function appendMovieCards(data, container, clearContainer = false) {
     if (data.data.movie_count) {
         if (clearContainer) {
-            conatiner.innerHTML = '';
+            container.innerHTML = '';
         }
 
         if (data.data.movies) {
             data.data.movies.forEach(movie => {
                 // Create card wrapper
                 const wrapper = document.createElement('div');
-                wrapper.classList.add('col-12', 'col-md-6', 'col-lg-3')
+                wrapper.classList.add('col-12', 'col-md-6', 'col-lg-3');
 
                 // Create movie card
                 const card = document.createElement('div');
@@ -59,14 +59,14 @@ function appenMoovieCards(data, conatiner, clearContainer = false) {
                     const link = document.createElement('a');
                     link.innerHTML = `${torrent.quality} ${torrent.type}`;
                     link.href = torrent.url;
-                    link.classList.add('download-link')
+                    link.classList.add('download-link');
                     textWrapper.appendChild(link);
                 });
 
                 // Add subtitle link
                 const subtitleLink = document.createElement('a');
                 subtitleLink.innerHTML = 'Subtitle';
-                subtitleLink.href = `https://www.yifysubtitles.com/movie-imdb/${movie.imdb_code}/`
+                subtitleLink.href = `https://www.yifysubtitles.com/movie-imdb/${movie.imdb_code}/`;
                 subtitleLink.target = '__blank';
                 subtitleLink.classList.add('subtitle-link');
                 textWrapper.appendChild(subtitleLink);
@@ -74,7 +74,7 @@ function appenMoovieCards(data, conatiner, clearContainer = false) {
                 card.appendChild(textWrapper);
                 // Append to DOM
                 wrapper.appendChild(card);
-                conatiner.appendChild(wrapper);
+                container.appendChild(wrapper);
             });
         }
     }
