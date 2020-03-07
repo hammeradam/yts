@@ -117,7 +117,11 @@ function addCardClickListener(card) {
             const movieData = await getMovieDetails(card.getAttribute('data-yts_id'));
             console.log(movieData);
             const modal = document.getElementById('detail_modal');
-            document.querySelector('#detail_modal h3').innerHTML = movieData.data.movie.title;
+            document.querySelector('.detail_modal__title').innerHTML = movieData.data.movie.title;
+            document.querySelector('.detail_modal__year').innerHTML = movieData.data.movie.year;
+            document.querySelector('.detail_modal__description').innerHTML = movieData.data.movie.description_full;
+            document.querySelector('.detail_modal__rating').innerHTML = movieData.data.movie.rating + '/10';
+            document.querySelector('.detail_modal__image').setAttribute('src', movieData.data.movie.medium_cover_image);
             modal.classList.add('show');
             document.querySelector('.overlay').classList.add('show');
             document.querySelector('body').classList.add('overflow-hidden');
