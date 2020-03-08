@@ -1,0 +1,111 @@
+@import "variables.css";
+
+#detail_modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 15vw;
+    padding: 30px;
+    transform: translateY(-50%);
+    width: 70vw;
+    background-color: var(--secondary-bg-color);
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 991px) {
+    #detail_modal {
+        padding: 10px;
+        top: 20px;
+        left: 20px;
+        width: calc(100vw - 40px);
+        height: calc(100vh - 40px);
+    }
+}
+
+#detail_modal.show {
+    display: block;
+}
+
+.detail_modal__body {
+    position: relative;
+}
+
+@media screen and (max-width: 991px) {
+    .detail_modal__body {
+        padding-top: 30px;
+    }
+}
+
+.detail_modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    z-index: 3;
+}
+
+.detail_modal__rating-wrapper {
+    align-items: center;
+}
+
+.detail_modal__rating-wrapper img {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.detail_modal__rating {
+    display: inline-block;
+    line-height: 20px;
+    margin: 0;
+}
+
+.detail_modal__genre-wrapper {
+    margin-top: 10px;
+}
+
+.detail_modal__genre-wrapper span {
+    padding: 5px;
+    margin-left: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border-radius: 5px;
+}
+
+.detail_modal__title-link, .detail_modal__title-link:hover, .detail_modal__title-link:focus {
+    color: var(--text-color);
+}
+
+.detail_modal__genre-wrapper span:first-child {
+    margin-left: 0;
+}
+
+.detail_modal__cast-wrapper {
+    margin-top: 10px;
+}
+
+.detail_modal__cast-wrapper p {
+    margin-bottom: 0;
+}
+
+.detail_modal__link-wrapper a {
+    padding: 5px;
+    margin-left: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border-radius: 5px;
+}
+
+.detail_modal__link-wrapper a:hover {
+    text-decoration: none;
+}
+
+.detail_modal__link-wrapper a:nth-child(2) {
+    margin-left: 0;
+}

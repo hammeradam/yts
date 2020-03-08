@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15f87da1-3a80-44a1-b087-4f0a42fe2555" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/img/star.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/modal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/variables.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/style.css" afterDir="false" />
@@ -34,12 +36,12 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/assets/favicon" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/img" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -60,6 +62,8 @@
       <workItem from="1583397757698" duration="761000" />
       <workItem from="1583423058998" duration="735000" />
       <workItem from="1583524680144" duration="4191000" />
+      <workItem from="1583577769783" duration="4918000" />
+      <workItem from="1583668205404" duration="6008000" />
     </task>
     <servers />
   </component>
@@ -75,13 +79,19 @@
       <screen x="2560" y="0" width="1920" height="1080" />
     </state>
     <state x="3252" y="356" width="525" height="328" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/2560.0.1920.1080/0.0.2560.1040@2560.0.1920.1080" timestamp="1583309779647" />
-    <state x="3174" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1583394186659">
-      <screen x="2560" y="0" width="1920" height="1080" />
+    <state x="614" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1583668206639">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="614" y="334" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583668206639" />
     <state x="3174" y="347" key="com.intellij.ide.util.TipDialog/2560.0.1920.1080/0.0.2560.1040@2560.0.1920.1080" timestamp="1583394186659" />
-    <state x="3078" y="181" width="884" height="678" key="find.popup" timestamp="1583307428178">
-      <screen x="2560" y="0" width="1920" height="1080" />
+    <state x="726" y="435" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583673313686">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="726" y="435" width="457" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583673313686" />
+    <state x="518" y="174" width="884" height="678" key="find.popup" timestamp="1583674717066">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="518" y="174" width="884" height="678" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583674717066" />
     <state x="3078" y="181" width="884" height="678" key="find.popup/2560.0.1920.1080/0.0.2560.1040@2560.0.1920.1080" timestamp="1583307428178" />
     <state x="3184" y="237" key="run.anything.popup" timestamp="1583394365493">
       <screen x="2560" y="0" width="1920" height="1080" />

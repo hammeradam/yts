@@ -122,6 +122,38 @@ function addCardClickListener(card) {
             document.querySelector('.detail_modal__description').innerHTML = movieData.data.movie.description_full;
             document.querySelector('.detail_modal__rating').innerHTML = movieData.data.movie.rating + '/10';
             document.querySelector('.detail_modal__image').setAttribute('src', movieData.data.movie.medium_cover_image);
+
+            const genreWrapper = document.querySelector('.detail_modal__genre-wrapper');
+            genreWrapper.innerHTML = '';
+            movieData.data.movie.genres.forEach(function(genre) {
+                const genreNode = document.createElement('span');
+                genreNode.innerHTML = genre;
+                genreWrapper.appendChild(genreNode);
+            });
+
+            const castWrapper = document.querySelector('.detail_modal__cast-wrapper');
+            castWrapper.innerHTML = '';
+            const castTitle = document.createElement('h5');
+            castTitle.innerHTML = 'Cast:';
+            castWrapper.appendChild(castTitle);
+            movieData.data.movie.cast.forEach(function(cast) {
+                const castNode = document.createElement('p');
+                castNode.innerHTML = cast.name;
+                castWrapper.appendChild(castNode);
+            });
+
+            const linkWrapper = document.querySelector('.detail_modal__link-wrapper');
+            linkWrapper.innerHTML = '';
+            const linkTitle = document.createElement('h5');
+            linkTitle.innerHTML = 'Download:';
+            linkWrapper.appendChild(linkTitle);
+            movieData.data.movie.torrents.forEach(function(torrent) {
+                const linkNode = document.createElement('a');
+                linkNode.setAttribute('href', torrent.url);
+                linkNode.innerHTML = `${torrent.quality} ${torrent.type} ${torrent.size}`;
+                linkWrapper.appendChild(linkNode);
+            });
+
             modal.classList.add('show');
             document.querySelector('.overlay').classList.add('show');
             document.querySelector('body').classList.add('overflow-hidden');
@@ -142,6 +174,12 @@ function addDownloadWrapperCloseClickListener(button) {
 }
 
 document.querySelector('.detail_modal__close').addEventListener('click', function () {
+    document.getElementById('detail_modal').classList.remove('show');
+    document.querySelector('.overlay').classList.remove('show');
+    document.querySelector('body').classList.remove('overflow-hidden');
+});
+
+document.querySelector('.overlay').addEventListener('click', function () {
     document.getElementById('detail_modal').classList.remove('show');
     document.querySelector('.overlay').classList.remove('show');
     document.querySelector('body').classList.remove('overflow-hidden');
