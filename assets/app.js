@@ -197,7 +197,7 @@ function matchHeight() {
         heights.push(getDivs[i].offsetHeight);
     }
 
-        //Find the largest of the divs
+    //Find the largest of the divs
     function getHighest() {
         return Math.max(...heights);
     }
